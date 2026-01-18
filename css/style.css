@@ -1,0 +1,863 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(
+    180deg,
+    #5b0000 0%,
+    #8b0000 40%,
+    #1a0000 100%
+  );
+  color: white;
+  overflow-x: hidden;
+}
+
+.nav{
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  width: 18px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+.nav span{
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #ff4fa3;
+  margin: 4px 0;
+  opacity: 0.85;
+  transition: 0.35s ease;
+  box-shadow: 0 0 8px rgba(255,79,163,0.6);
+}
+
+.nav:hover span{
+  opacity: 1;
+}
+.nav.navactive span{
+  background: white;
+}
+
+.navbtm{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(10,0,0,0.85);
+  transform: translateX(-100%);
+  transition: transform 0.45s ease;
+  z-index: 2000;
+  padding: 120px 35px;
+}
+
+.navbtm.navopen{
+  transform: translateX(0);
+}
+.navbtm ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.navbtm a{
+  color: white;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-decoration: none;
+  opacity: 0.65;
+  transition: 0.3s ease;
+}
+
+.navbtm a:hover{
+  opacity: 1;
+  color: #ff4fa3;
+}
+
+#box1 h1,
+.text1 h2{
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hero-title,
+#box1 h1,
+#box1 p{
+  font-family: 'Orbitron', sans-serif;
+  
+}
+
+
+#erstawerk{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  overflow: hidden;
+}
+
+#erstawerk img{
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.9);
+}
+
+
+#box1{
+  grid-column: 9 / 12;
+  grid-row: 7 / 12;
+  padding: 0;
+  z-index: 2;
+  transform: translate(40px, 100px);
+  animation: solafs 4s ease-in-out infinite;
+}
+
+
+@keyframes solafs {
+  0%   { transform: translate(30px, 100px); }
+  50%  { transform: translate(50px, 100px); }
+  100% { transform: translate(30px, 100px); }
+}
+
+
+
+#box1 h1,
+#box1 p{
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.18);
+  text-shadow: 0 0 100px rgba(255,79,163,0.25);
+}
+
+
+.scroll{
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  animation: scrollAnim 1.5s infinite;
+}
+
+.scroll .line{
+  width: 1px;
+  height: 40px;
+  background: white;
+}
+
+.titleen{
+  position: absolute;
+  top: 40px;     
+  left: 60px;
+
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  line-height: 1.05;
+
+  color: rgba(255,255,255,0.08);
+  z-index: 3;
+
+  animation: hassan 6s ease-in-out infinite;
+}
+
+@keyframes hassan {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+
+
+
+@media (max-width: 900px){
+
+
+  #erstawerk{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+
+  #erstawerk img{
+    height: 100vh;
+  }
+
+  .titleen{
+    font-size: 10px;
+    top: 60px;
+    left: 30px;
+  }
+  
+  #box1{
+    grid-column: auto;
+    grid-row: auto;
+    position: absolute;
+    right: 30px;
+    bottom: 120px;
+    transform: none;
+    text-align: right;
+  }
+
+  #box1 h1{
+    font-size: 28px;
+    letter-spacing: 6px;
+  }
+}
+
+#biography{
+  min-height: 100vh;
+  padding: 120px 140px;
+}
+
+.fotogrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.fotoabout img{
+  width: 100%;
+  transform: scale(1.1);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.text1 h2{
+  color: #ff4fa3;
+  margin-bottom: 30px;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.text1 p{
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  opacity: 0.9;
+  max-width: 420px;
+}
+
+.aunder{
+  color: #ff4fa3;
+  letter-spacing: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+@media (max-width: 768px){
+
+  #biography{
+    padding: 60px 20px;
+  }
+
+  .fotogrid{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fotoabout img{
+    transform: scale(1);
+    width: 100%;
+  }
+
+}
+
+
+#gallery{
+  min-height: 100vh;
+}
+
+#contact{
+  min-height: 100vh;
+}
+
+
+#music{
+  height: auto;
+}
+
+
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollAnim{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%{
+    transform: translateY(10px);
+    opacity: 0.6;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* lailaaa */
+#music{
+  min-height: 100vh;
+  padding: 5px 40px;
+}
+
+.musiclaila{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.musiclolo h2{
+  color: #ff4fa3;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.musiclolo .sub{
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.85;
+  max-width: 520px;
+  margin-bottom: 60px;
+}
+
+.musicrezz{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* laila almraba */
+.albunire{
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 35px;
+  backdrop-filter: blur(2px);
+}
+
+.albunire h3{
+  font-size: 42px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255,79,163,0.4);
+}
+
+.albunire .meta{
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.75;
+  margin-bottom: 25px;
+}
+
+.albunbuttons{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.btnnd{
+  border: 1px solid #ff4fa3;
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.btnnd:hover{
+  background: #ff4fa3;
+  color: #1a0000;
+}
+
+.albunire .note{
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.85;
+}
+
+
+.tracklist h4{
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.tracklist ol{
+  list-style: none;
+  padding: 0;
+}
+
+.tracklist li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.tracklist .time{
+  opacity: 0.7;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.tracklist .small{
+  margin-top: 18px;
+  font-size: 11px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+}
+.albumextra{
+  margin-top: 80px;
+  max-width: 600px;
+ margin-bottom: 30px;
+}
+
+.albumextra h4{
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  color: #ff4fa3;
+}
+
+.albumextra p{
+  font-size: 14px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+@media (max-width: 768px) {
+
+  #music {
+    padding: 40px 20px;
+  }
+
+  .musicrezz {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .musiclolo h2 {
+    font-size: 26px;
+  }
+
+  .albunire h3 {
+    font-size: 32px;
+  }
+
+  .albunire {
+    padding: 25px;
+  }
+
+  .tracklist li {
+    font-size: 12px;
+  }
+
+  .albumextra {
+    margin-top: 50px;
+  }
+ 
+}
+
+
+/*  laila */
+
+#gallery{
+  min-height: 100vh;
+  padding: 20px 40px;
+}
+
+.gallerymaim{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titlespiral{
+  color: #ff4fa3;
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.gallerytextvisual{
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 500px;
+  opacity: 0.85;
+  margin-bottom: 60px;
+}
+
+.gallerygridfoto{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.gallerygridfoto img{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  filter: brightness(0.75) contrast(1.1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallerygridfoto img:hover{
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+
+.albumlaila{
+  font-size: 12px;
+  opacity: 0.75;
+  letter-spacing: 2px;
+}
+
+
+.gallerytextva{
+  margin-top: 70px;
+  max-width: 600px;
+}
+
+.gallerytextde{
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+
+.gallerylighting{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gallerylighting span{
+  border: 1px solid rgba(255,79,163,0.6); 
+  color: #ff4fa3;
+  padding: 6px 14px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+
+.gallerylighting span:hover{
+  background: #ff4fa3;
+  color: #1a0000;
+}
+
+
+
+
+.galleryeend{
+  margin-top: 50px;
+  max-width: 600px;
+  opacity: 0.8;
+}
+
+.galleryeend p{
+  font-size: 13px;
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+.galleryeend::before{
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #ff4fa3;
+  margin-bottom: 30px;
+}
+/* laila contact */
+#contact{
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  padding-top: 50px;      
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+
+
+
+.contacteersta{
+  max-width: 600px;
+  text-align: center;
+}
+
+.contcttitle{
+  color: #ff4fa3;
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.contatext{
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 50px;
+}
+
+.linkscontAT{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.linkscontAT a{
+  border: 1px solid rgba(255,79,163,0.6);
+  color: #ff4fa3;
+  text-decoration: none;
+  padding: 12px 22px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.linkscontAT a:hover{
+  background: #ff4fa3;
+  color: #1a0000;
+}
+
+.contafotoer{
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  opacity: 0.6;
+  letter-spacing: 4px;
+}
+@media (max-width: 768px){
+
+  #contact{
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .contafotoer{
+    position: static;        
+    transform: none;
+    margin-top: 60px;       
+    text-align: center;
+  }
+
+}
+
+
+#tickets{
+  min-height: 100vh;
+  padding: 80px 40px;
+  position: relative;
+}
+
+
+
+
+#tickets::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+.ticketsmain{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+
+.ticketsinfo h2{
+color: #ff4fa3;
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 4px rgba(255,79,163,0.6);
+}
+
+.ticketsxwt{
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.85;
+  max-width: 480px;
+  margin-bottom: 60px;
+}
+
+
+.ticketsbox{
+  border: 1px solid rgba(255,79,163,0.7);
+  padding: 40px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 30px rgba(255,79,163,0.15);
+  transition: 0.4s ease;
+}
+
+.ticketsbox:hover{
+  box-shadow: 0 0 45px rgba(255,79,163,0.25);
+}
+
+.ticketsbox h3{
+  font-size: clamp(24px, 4vw, 35px);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.ticketsuyt{
+  font-size: 11px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+.ticketsdj{
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+
+.btndj{
+  display: inline-block;
+  border: 1px solid var(--accen);
+  color: white;
+  text-decoration: none;
+  padding: 14px 26px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  transition: 0.3s;
+  box-shadow: 0 0 0 rgba(255,79,163,0);
+}
+
+.btndj:hover{
+  box-shadow: 0 0 20px rgba(255,79,163,0.6);
+}
+
+
+.list h4{
+  font-size: 15px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+.list h4::after{
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-top: 18px;
+  opacity: 0.8;
+}
+
+.list ul{
+  list-style: none;
+  padding: 0;
+}
+
+.list li{
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+
+.list{
+  margin-top: 170px;
+}
+
+.btndj{
+  border: 1px solid #ff4fa3;
+}
+
+
+.titleen{
+  position: absolute;
+  top: 140px;
+  left: 60px;
+
+  font-size: clamp(40px, 5vw, 50px);
+  font-weight: 800;
+  letter-spacing: 8px;
+  line-height: 1.05;
+
+  color: rgba(255,255,255,0.08);
+  text-transform: uppercase;
+
+  z-index: 3;         
+  pointer-events: none;
+}
+
+@media (max-width: 768px){
+
+  .ticketsmain{
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .list{
+    margin-top: 0;
+  }
+
+}
